@@ -9,5 +9,5 @@
 #SBATCH -e test_err.txt
 #SBATCH -o test_out.txt
 
-source /home/Student/s4745275/Conda_Env/bin/activate /home/Student/s4745275/COMP3702
+source /home/Student/s4745275/miniconda/bin/activate /home/Student/s4745275/Conda_Env
 python dqn_gym.py --env CartPole-v1 --config_file config/dqn.yaml --network single-hidden --seed 1
