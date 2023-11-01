@@ -47,7 +47,7 @@ else:
     device = torch.device("cpu")
     print("Training on CPU")
 
-# Create the specified network using the environment and paraeters, then load onto the device
+# Create the specified network using the environment and parameters, then load onto the device
 if args.network == 'two-hidden':
     net = DqnNetTwoLayers(obs_size=env.observation_space.shape[0],
                           hidden_size=params['hidden_size'], hidden_size2=params['hidden_size2'],
