@@ -96,6 +96,12 @@ state, _ = env.reset()
 def calculate_loss(net, target_net):
     states_v, actions_v, rewards_v, dones_v, next_states_v = buffer.sample(params['batch_size'])
 
+    states_v = states_v.to(device)
+    actions_v = actions_v.to(device)
+    rewards_v = rewards_v.to(device)
+    dones_v = dones_v.to(device)
+    next_states_v = next_states_v.to(device)
+
     # get the Q value of the state - i.e. Q value for each action possible in that state
     # in CartPole there are 2 actions so this will be tensor of (2, BatchSize)
     Q_s = net.forward(states_v)
