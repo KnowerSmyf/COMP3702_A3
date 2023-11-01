@@ -2,7 +2,6 @@ import argparse
 import os
 
 import gymnasium as gym
-# import gym
 import math
 import numpy as np
 import time
@@ -47,7 +46,7 @@ else:
     device = torch.device("cpu")
     print("Training on CPU")
 
-exit()
+
 # Create the specified network using the environment and parameters, then load onto the device
 if args.network == 'two-hidden':
     net = DqnNetTwoLayers(obs_size=env.observation_space.shape[0],
