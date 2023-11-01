@@ -6,8 +6,9 @@
 #SBATCH --job-name="CartV0" 
 #SBATCH --mail-user=s4745275@student.uq.edu.au
 #SBATCH --mail-type=ALL
-#SBATCH -e test_err_v0.txt
-#SBATCH -o test_out_v0.txt
+#SBATCH -e test_err.txt
+#SBATCH -o test_out_3.txt
 
 source /home/Student/s4745275/miniconda/bin/activate /home/Student/s4745275/miniconda
-python dqn_gym.py --env CartPole-v0 --config_file config/dqn.yaml --network single-hidden --seed 1
+python dqn_gym.py --env CartPole-v1 --config_file config/dqn.yaml --network single-hidden --seed 1 --lr 5e-3
+

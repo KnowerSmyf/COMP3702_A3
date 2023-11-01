@@ -20,6 +20,7 @@ parser.add_argument("-n", "--network", default='s',
                     help="DQN network architecture `single-hidden` for single hidden layer, `two-hidden` for 2 hidden layers and `duelling-dqn` for duelling DQN",
                     choices=['single-hidden', 'two-hidden', 'duelling-dqn'])
 parser.add_argument("-s", "--seed", type=int, help="Manual seed (leave blank for random seed)")
+parser.add_argument("-l", "--lr", type=float, help="specify learning rate for Q5")
 args = parser.parse_args()
 
 # Hyperparameters for the requried environment
@@ -77,7 +78,7 @@ print(net)
 
 buffer = ExperienceBuffer(int(params['replay_size']), device)
 
-optimizer = optim.Adam(net.parameters(), lr=params['learning_rate'])
+optimizer = optim.Adam(net.parameters(), lr=params[args.lr])
 
 frame_idx = 0
 max_reward = -math.inf
