@@ -78,7 +78,7 @@ print(net)
 
 buffer = ExperienceBuffer(int(params['replay_size']), device)
 
-optimizer = optim.Adam(net.parameters(), lr=params[args.lr])
+optimizer = optim.Adam(net.parameters(), lr=args.lr)
 
 frame_idx = 0
 max_reward = -math.inf
